@@ -42,17 +42,57 @@
             border-radius: 2rem;
             padding: 1rem;
         }
+
+        .make-second-background {
+            background-color: #F8CB2E;
+            border-radius: 2rem;
+            padding: 1.5rem;
+        }
     </style>
 </head>
 
 <body>
     <div class="center-div">
-        <div class="make-background">
-            <label for='nama'>Masukkan nama kamu :</label>
-            <input type='text' name='nama' id='nama'>
-            <button>OK</button>
+        <div>
+            <div class=""></div>
+            <br>
+            <div class="make-background">
+                <center>
+                    <label for='nama'>Masukkan nama kamu :</label>
+                    <input type='text' name='nama' id='nama'>
+                    <button onclick="required()">OK</button>
+                </center>
+            </div>
+            <br>
+            <div class="" id="ucapan">
+                <center>
+                    <div id="output-1"></div>
+                    <div id="output-2"></div>
+                    <div id="output-3"></div>
+                    <div id="output-4"></div>
+                </center>
+            </div>
         </div>
     </div>
+    <script>
+        nama = document.getElementById("nama").value;
+        function required() {
+            var nama = document.getElementById("nama").value;
+            if (nama.length == 0) {
+                alert('Nama tidak boleh kosong!');
+                return false;
+            } else if (nama.length < 3) {
+                alert('Masukkan nama yang valid!');
+                return false;
+            }
+            var element = document.getElementById("ucapan");
+            element.classList.add("make-background");
+            document.getElementById("output-1").innerHTML = "Assalamu'alaikum " + nama + ", Setiap manusia tak luput";
+            document.getElementById("output-2").innerHTML = "dari kesalahan. Untuk itu, saya atas nama Naufal ucapkan :";
+            document.getElementById("output-3").innerHTML = "Minal 'aidin wal faizin, Mohon maaf lahir dan batin";
+            document.getElementById("output-4").innerHTML = "Taqabbalallahu minna wa minkum wa taqabbal ya kariim";
+        }
+    </script>
 </body>
 
 </html>
